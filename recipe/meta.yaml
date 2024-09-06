@@ -16,7 +16,7 @@ source:
 build:
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -28,6 +28,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
 
