@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/egl_probe-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/egl_probe-{{ version }}.tar.gz
   sha256: 29bdca7b08da1e060cfb42cd46af8300a7ac4f3b1b2eeb16e545ea16d9a5ac93
   patches:
     # Do not include the sources and the build directory in the wheel, see
@@ -15,8 +15,8 @@ source:
 
 build:
   skip: true  # [win]
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 3
+  script: CMAKE_POLICY_VERSION_MINIMUM=3.5 {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 4
 
 requirements:
   build:
